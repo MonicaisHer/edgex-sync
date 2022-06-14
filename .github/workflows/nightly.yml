@@ -38,3 +38,15 @@ jobs:
           consumer_name: ${{ secrets.LP_CONSUMER_NAME }}
           access_token: ${{ secrets.LP_ACCESS_TOKEN }}
           access_secret: ${{ secrets.LP_ACCESS_SECRET }}
+  
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: gautamkrishnar/keepalive-workflow@master
+        with:
+          commit_message: keepalive
+          committer_username: github-actions[bot]
+          committer_email: github-actions[bot]@users.noreply.github.com
+      
+      
